@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AEAA,AACE,MADI,CACJ,EAAE,CAAC;EACD,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;CAO9B;;AAXH,AAMM,MANA,CACJ,EAAE,CAIA,EAAE,CACA,CAAC,CAAC;EACA,KAAK,EDPA,OAAO;ECQZ,eAAe,EAAE,IAAI;CACtB",
+    "sources": [
+        "style.scss",
+        "_variables.scss",
+        "col-xl/_footer.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

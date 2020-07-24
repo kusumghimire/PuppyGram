@@ -1,0 +1,13 @@
+footer {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    li {
+      a {
+        color: $primaryGray;
+        text-decoration: none;
+      }
+    }
+  }
+}
