@@ -3,3 +3,8 @@
 
 @import '1200-xl/footer';
 @import '1200-xl/header';
+
+@media only screen and (max-width: 576px) {
+@import '576_sm/footer';
+
+}

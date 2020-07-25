@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 footer {
@@ -207,6 +207,40 @@ header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   }
   header .menu-icon {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  footer ul {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0;
+  }
+  footer ul li {
+    padding: 0 1rem;
+  }
+  footer ul li a {
+    text-decoration: none;
+  }
+  footer ul .fas.fa-circle {
+    font-size: 5px;
+  }
+  footer .copyright {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .copyright span {
+    padding: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
