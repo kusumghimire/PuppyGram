@@ -11,4 +11,9 @@ footer ul li a {
   color: #707070;
   text-decoration: none;
 }
+
+footer ul .fas.fa-circle {
+  font-size: 5px;
+  color: #707070;
+}
 /*# sourceMappingURL=style.css.map */
