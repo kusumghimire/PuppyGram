@@ -1,0 +1,27 @@
+footer {
+  color: $primaryGray;
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    li {
+      padding: 0 1rem;
+      a {
+        text-decoration: none;
+      }
+    }
+    .fas.fa-circle {
+      font-size: 5px;
+    }
+  }
+  .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      padding: 0 1rem;
+    }
+  }
+}
