@@ -8,7 +8,10 @@
   <!-- Font Awesome CDN-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <!-- CSS-->
+ 
+      <!--javascript code -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- CSS-->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -45,16 +48,16 @@
   <section class="wrapper-main">
     <aside class="wrapper">
       <figure>
-        <img src="/img/01.png" alt="Black">
+        <img id="myImg" src="/img/01.png" alt="Black">
       </figure>
       <figure>
-        <img src="/img/02.png" alt="Black">
+        <img id="myImg" src="/img/02.png" alt="Black">
       </figure>
       <figure>
-        <img src="/img/03.png" alt="Black">
+        <img id="myImg" src="/img/03.png" alt="Black">
       </figure>
       <figure>
-        <img src="/img/04.png" alt="Black">
+        <img id="myImg" src="/img/04.png" alt="Black">
       </figure>
       <figure>
         <img src="/img/05.png" alt="Black">
@@ -101,7 +104,30 @@
         </select>
       </div>
     </aside>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+
+      <div id="caption">This is specific modal</div>
+      <p>This is specific contrnt</p>
+    </div>
   </section>
+
+  <div class="popup">
+    <img src="http://images.entertainment.ie/images_content/rectangle/620x372/success-kid.jpg">
+    <img src="https://pbs.twimg.com/media/CX1PAZwVAAANemW.jpg">
+    <img src="http://images5.fanpop.com/image/photos/30900000/beautiful-pic-different-beautiful-pictures-30958249-1600-1200.jpg">
+  </div>
+  <div class="show">
+    <div class="overlay"></div>
+    <div class="img-show">
+      <span>X</span>
+      <img src="">
+      Image closes header
+    </div>
+  </div>
+  <!--End image popup-->
 
   <footer>
     <ul>
@@ -127,5 +153,41 @@
     </aside>
   </footer>
 </body>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById("myImg");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  $(function () {
+    "use strict";
+    $(".popup img").click(function () {
+        var $src = $(this).attr("src");
+        $(".show").fadeIn();
+        $(".img-show img").attr("src", $src);
+    });
+    $("span, .overlay").click(function () {
+        $(".show").fadeOut();
+    });
+});
+
+</script>
 
 </html>
