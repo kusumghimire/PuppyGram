@@ -10,6 +10,11 @@ footer {
       padding: 0 1rem;
       a {
         text-decoration: none;
+        font-weight: 500;
+        color: $primaryGray;
+        &:hover {
+          color: $secondaryGray;
+        }
       }
     }
     .fas.fa-circle {

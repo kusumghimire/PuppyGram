@@ -1,0 +1,14 @@
+.wrapper {
+  padding: 8rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin: 0 10rem;
+  figure {
+    margin: 0;
+    padding: 0;
+    img {
+      cursor: pointer;
+    }
+  }
+}
