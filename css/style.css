@@ -49,10 +49,6 @@ body {
           justify-content: flex-start;
 }
 
-.header {
-  padding: 0 10rem;
-}
-
 .header .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,45 +160,63 @@ body {
 
 /* 48em = 768px */
 @media (min-width: 48em) {
+  .header {
+    padding: 0 10rem;
+  }
   .header li {
     float: left;
   }
+  .header li a {
+    padding: 20px 30px;
+  }
   .header .menu {
     clear: none;
+    float: right;
     max-height: none;
-    width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .header .menu-icon {
     display: none;
   }
 }
 
-.wrapper {
-  padding: 8rem 0;
+.wrapper-main .wrapper {
+  padding: 8rem 0 2rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-  margin: 0 10rem;
+  margin: 0 8rem;
+  justify-items: center;
 }
 
-.wrapper figure {
+.wrapper-main .wrapper figure {
   margin: 0;
   padding: 0;
 }
 
-.wrapper figure img {
+.wrapper-main .wrapper figure img {
   cursor: pointer;
+}
+
+.wrapper-main .load-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 2rem;
+  line-height: 30px;
+  color: #707070;
+  font-weight: 500;
 }
 
 footer {
@@ -225,6 +239,7 @@ footer ul {
 
 footer ul li {
   padding: 0 1rem;
+  margin: 1rem 0;
 }
 
 footer ul li a {
@@ -261,6 +276,7 @@ footer .copyright span {
   .wrapper {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+    margin: 0 4rem;
   }
 }
 
@@ -280,10 +296,16 @@ footer .copyright span {
   .wrapper {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
+    margin: 0 2rem;
   }
 }
 
 @media only screen and (max-width: 375px) {
+  .wrapper {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    margin: 0 1rem;
+  }
   footer ul li {
     padding: 0 0.3rem;
   }

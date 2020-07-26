@@ -15,5 +15,6 @@
 }
 
 @media only screen and (max-width: 375px) {
+  @import "375_col/wrapper";
   @import "375_col/footer";
 }
