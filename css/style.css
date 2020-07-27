@@ -53,11 +53,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
 .header .menu .searchbtn {
@@ -81,10 +76,28 @@ body {
   top: 1%;
 }
 
-.header .menu .upload-btn {
+.header .menu div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.header .menu div .upload-btn {
   background-color: orange;
   cursor: pointer;
   border: none;
+  padding: 5px 16px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.header .menu div a {
+  color: #707070;
+  text-decoration: none;
 }
 
 /* menu icon */
@@ -160,19 +173,38 @@ body {
 
 /* 48em = 768px */
 @media (min-width: 48em) {
-  .header {
-    padding: 0 10rem;
-  }
-  .header li {
-    float: left;
-  }
-  .header li a {
-    padding: 20px 30px;
-  }
   .header .menu {
     clear: none;
-    float: right;
     max-height: none;
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 1rem auto;
+    padding-left: 4rem;
+  }
+  .header .menu div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .menu div button {
+    margin: 0 1rem;
+  }
+  .header .menu div a {
+    margin: 0 1rem;
+    color: #707070;
+    text-decoration: none;
   }
   .header .menu-icon {
     display: none;
