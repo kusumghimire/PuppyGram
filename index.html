@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-  <!--javascript code -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- CSS-->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,16 +31,17 @@
         </span> -->
       </form>
       <div>
-        <button class="upload-btn">Upload</button>
-    <a href="#">
-      <i class="fas fa-bell"></i>
-    </a>
-    <a href="#">
-      MB
-    </a>
-   </div>
+        <a class="upload-btn button" href="#popup1">Upload</a>
+        <a href="#">
+          <i class="fas fa-bell"></i>
+        </a>
+        <a href="#">
+          MB
+        </a>
+      </div>
     </aside>
   </header>
+
   <section class="wrapper-main">
     <aside class="wrapper">
       <figure>
@@ -102,7 +101,8 @@
         </select>
       </div>
     </aside>
-    <!-- The Modal -->
+
+    <!-- Image Modal -->
     <div id="myModal" class="modal">
       <span class="close">&times;</span>
       <img class="modal-content" id="img01">
@@ -111,13 +111,6 @@
       <p>This is specific contrnt</p>
     </div>
   </section>
-
-  <div class="popup">
-    <img src="http://images.entertainment.ie/images_content/rectangle/620x372/success-kid.jpg">
-    <img src="https://pbs.twimg.com/media/CX1PAZwVAAANemW.jpg">
-    <img
-      src="http://images5.fanpop.com/image/photos/30900000/beautiful-pic-different-beautiful-pictures-30958249-1600-1200.jpg">
-  </div>
   <div class="show">
     <div class="overlay"></div>
     <div class="img-show">
@@ -127,6 +120,35 @@
     </div>
   </div>
   <!--End image popup-->
+
+  <!-- Upload popup form -->
+  <div id="popup1" class="overlay">
+    <div class="popup">
+      <h2>Upload your dog photo</h2>
+      <a class="close" href="#">&times;</a>
+      <form>
+        <div>
+          <label for="fname">Upload a pic</label>
+          <input type="file" id="img" name="img" accept="image/*">
+        </div>
+        <div>
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="What is your dog breed">
+        </div>
+        <div>
+          <label for="lname">Description(option)</label>
+          <textarea rows="4" cols="50" placeholder="(optional)">
+          </textarea>
+        </div>
+        <div>
+          <label for="lname">Secret User</label>
+          <input type="text" class="form-control" id="takeValue" placeholder="# # # # #" />
+          <input type="text" class="form-control" id="firstSum" />
+        </div>
+        <button class="btn-btn-success" oncliCK="shortOne()">Submit</button>
+      </form>
+    </div>
+  </div>
 
   <footer>
     <ul>
@@ -154,7 +176,8 @@
 </body>
 
 <script>
-  // Get the modal
+
+  // Find the modal
   var modal = document.getElementById("myModal");
 
   // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -167,25 +190,40 @@
     captionText.innerHTML = this.alt;
   }
 
-  // Get the <span> element that closes the modal
+  // Find the respective modal
   var span = document.getElementsByClassName("close")[0];
 
-  // When the user clicks on <span> (x), close the modal
+  //Clicks on  (x), close the modal
   span.onclick = function () {
     modal.style.display = "none";
   }
 
-  $(function () {
-    "use strict";
-    $(".popup img").click(function () {
-      var $src = $(this).attr("src");
-      $(".show").fadeIn();
-      $(".img-show img").attr("src", $src);
-    });
-    $("span, .overlay").click(function () {
-      $(".show").fadeOut();
-    });
-  });
+  //secret user  form
+  function shortOne() {
+  var number = document.getElementById("takeValue").value.split("");
+  parsedNumber = number.map((x) => parseInt(x, 10));
+
+  var sum = parsedNumber.reduce((a, b) => a + b, 0);
+
+  secondNumber = document.getElementById("firstSum");
+  secondNumber.value = sum;
+  splitSecond = secondNumber.value.split("");
+
+  parsedSecond = splitSecond.map((x) => parseInt(x, 10));
+
+  finalSum = parsedSecond.reduce((a, b) => a + b, 0);
+
+  if (sum === 7) {
+    alert("success");
+  } else {
+    if (finalSum === 7) {
+      alert("success");
+    } else {
+      alert("fail");
+    }
+  }
+}
+
 
 </script>
 

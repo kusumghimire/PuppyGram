@@ -3,10 +3,14 @@
 
 @import "1200-xl/header";
 @import "1200-xl/wrapper";
+@import "1200-xl/popup";
+@import "1200-xl/popup-form";
 @import "1200-xl/footer";
 
 @media only screen and (max-width: 768px) {
   @import "768-md/wrapper";
+@import "768-md/popup-form";
+
 }
 
 @media only screen and (max-width: 576px) {

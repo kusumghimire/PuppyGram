@@ -1,4 +1,6 @@
-.wrapper {
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0 4rem;
+.wrapper-main{
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 4rem;
+  }
 }

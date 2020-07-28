@@ -53,6 +53,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .header .menu .searchbtn {
@@ -80,6 +89,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -93,6 +106,7 @@ body {
   border-radius: 5px;
   color: #fff;
   font-weight: 500;
+  margin: 1rem 0;
 }
 
 .header .menu div a {
@@ -187,6 +201,10 @@ body {
         justify-content: space-around;
     margin: 1rem auto;
     padding-left: 4rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .header .menu div {
     display: -webkit-box;
@@ -197,9 +215,13 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  .header .menu div button {
-    margin: 0 1rem;
+  .header .menu div .upload-btn {
+    margin: 0;
   }
   .header .menu div a {
     margin: 0 1rem;
@@ -413,6 +435,78 @@ body {
 }
 
 /*End style*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: opacity 500ms;
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  color: #707070;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close:hover {
+  color: yellow;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.overlay .popup form {
+  color: #707070;
+}
+
+.overlay .popup form div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  margin: 1rem 0;
+}
+
+.overlay .popup form div #firstSum {
+  display: none;
+}
+
 footer {
   color: #707070;
 }
@@ -467,10 +561,16 @@ footer .copyright span {
 }
 
 @media only screen and (max-width: 768px) {
-  .wrapper {
+  .wrapper-main .wrapper {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     margin: 0 4rem;
+  }
+  .overlay .popup form div {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0.5rem;
+    margin: 1rem 0;
   }
 }
 
@@ -487,7 +587,7 @@ footer .copyright span {
   footer .copyright span {
     padding: 0;
   }
-  .wrapper {
+  .wrapper-main .wrapper {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     margin: 0 2rem;
@@ -495,7 +595,7 @@ footer .copyright span {
 }
 
 @media only screen and (max-width: 375px) {
-  .wrapper {
+  .wrapper-main .wrapper {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     margin: 0 1rem;
