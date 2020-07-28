@@ -14,8 +14,11 @@
 }
 
 @media only screen and (max-width: 576px) {
-  @import "576_sm/footer";
   @import "576_sm/wrapper";
+@import "576_sm/popup";
+
+  @import "576_sm/footer";
+  
 }
 
 @media only screen and (max-width: 375px) {
